@@ -2,8 +2,9 @@
 <h1>Home</h1>
 <p><%= HOMECONTENT %></p>
 
-<% for(let i=0; i < BLOGLIST.length; i++) {%>
-    <p><%=BLOGLIST[i]%></p>
-<% } %>
+<% BLOGLIST.forEach(function(post) { %>
+<h3><%=post.title%></h3>
+<p><%=post.content%></p>
+<% }); %>
 
 <%- include("partials/footer") -%>

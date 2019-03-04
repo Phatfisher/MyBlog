@@ -34,8 +34,12 @@ app.get("/compose", function(req,res){
 });
 
 app.post("/compose", function(request,response){
-  let newItem = request.body.newBlog; 
-  blogList.push(newItem);
+  
+  const post={
+    title: request.body.newBlogTitle, 
+    content: request.body.newBlogContent 
+  };
+  blogList.push(post);
   response.redirect("/");
 
 });
