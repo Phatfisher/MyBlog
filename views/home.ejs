@@ -1,7 +1,9 @@
-<%- include("header") -%>
+<%- include("partials/header") -%>
 <h1>Home</h1>
 <p><%= HOMECONTENT %></p>
 
+<% for(let i=0; i < BLOGLIST.length; i++) {%>
+    <p><%=BLOGLIST[i]%></p>
+<% } %>
 
-
-<%- include("footer") -%>
+<%- include("partials/footer") -%>
