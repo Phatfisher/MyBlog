@@ -55,6 +55,7 @@ app.post("/compose", function(request,response){
 
 });
 
+// redirects to post if post is a match in blog list. 
 app.get("/posts/:postName", function(req,res)
 {
   const resTitle = _.lowerCase(req.params.postName); 
@@ -63,12 +64,12 @@ app.get("/posts/:postName", function(req,res)
   {
     const storedTitle = _.lowerCase(post.title);
     if(resTitle === storedTitle){
-      res.render("post");
+      res.render("post", {
+        title: post.title,
+        content: post.content
+      });
     }
-    else  
-      res.redirect("/");
   });
-  
 });
 
 // Port location for local debugging.
